@@ -65,16 +65,21 @@ function tabuada() {
     document.getElementById("resultado7").innerText = resultado;
 }
 
-
 function contador() {
-    let resultado = "";
-    for (let i = 1; i <= 10; i++) {
-        resultado += i + " \n";
-    }
-    document.getElementById("resultado8").innerText = resultado;
+      let numero = 1;
+      let resultado = "";
 
-    
+      const intervalo = setInterval(() => {
+        resultado += numero + "\n";
+        document.getElementById("resultado8").innerText = resultado;
+        numero++;
+
+        if (numero > 10) {
+          clearInterval(intervalo);
+        }
+      }, 1000);
 }
+
 
 function calcularMedia() {
     let n1 = Number(document.getElementById("num9_1").value);
@@ -128,10 +133,17 @@ function verificarSenha() {
 }
 
 function contadorRegressivo() {
+    let numero = 10
     let resultado = "";
-    for (let i = 10; i >= 0; i--) {
-        resultado += i + " \n";
-    }
-    document.getElementById("resultado13").innerText = resultado;
-}
+    
+    const intervalo = setInterval(() => {
+        resultado += numero + "\n"
+        document.getElementById("resultado13").innerText = resultado;
+        numero--;
 
+        if (numero < 1) {
+            clearInterval(intervalo);
+        }
+    }, 1000);
+    
+}
