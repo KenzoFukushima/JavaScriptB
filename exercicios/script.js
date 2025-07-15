@@ -53,3 +53,85 @@ function verificarMaior() {
         document.getElementById("resultado6").innerText = "São iguais";
     }
 }
+
+function tabuada() {
+    let n1 = Number(document.getElementById("num7_1").value);
+    let resultado = "";
+
+    for (let i = 0; i <= 10; i++) {
+        resultado += `${n1} x ${i} = ${n1 * i}\n`;
+    }
+
+    document.getElementById("resultado7").innerText = resultado;
+}
+
+
+function contador() {
+    let resultado = "";
+    for (let i = 1; i <= 10; i++) {
+        resultado += i + " \n";
+    }
+    document.getElementById("resultado8").innerText = resultado;
+
+    
+}
+
+function calcularMedia() {
+    let n1 = Number(document.getElementById("num9_1").value);
+    let n2 = Number(document.getElementById("num9_2").value);
+    let n3 = Number(document.getElementById("num9_3").value);
+
+
+    let calcularMedia = ((n1 + n2 + n3) / 3).toFixed(2);
+
+    let resultado = n1 >= 6 ? "Aprovado" : "Repovado"
+
+
+    document.getElementById("resultado9").innerText = resultado + "\nMedia: " + calcularMedia;
+}
+
+function conversorTemperatura() {
+    let celsius = Number(document.getElementById("num10_1").value);
+    let resultadoConversao = (celsius * 9/5) + 32;
+
+    document.getElementById("resultado10").innerText = "Fahrenheit (°F): " + resultadoConversao;
+}
+
+function verificarSemana() {
+    let num = Number(document.getElementById("numDia").value)
+    const diaSemana = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sabado"];
+
+    if(!isNaN(num)) {
+        document.getElementById("resultado11").innerText = "Número invalido";
+    }
+
+    if(num <= 7 && num >=1) {
+        for(let i = 1; i <= 7; i++) {
+            if(num == i) {
+                document.getElementById("resultado11").innerText = diaSemana[i-1];
+            }
+        }
+    } else {
+        document.getElementById("resultado11").innerText = "Numero invalido";
+    }
+}
+
+function verificarSenha() {
+    let numComparativo = 1234;
+    let num = Number(document.getElementById("senha").value);
+
+    if(num === numComparativo) {
+        document.getElementById("resultado12").innerText = "Acesso permitido";
+    } else {
+        document.getElementById("resultado12").innerText = "Senha Incorreta";
+    }
+}
+
+function contadorRegressivo() {
+    let resultado = "";
+    for (let i = 10; i >= 0; i--) {
+        resultado += i + " \n";
+    }
+    document.getElementById("resultado13").innerText = resultado;
+}
+
